@@ -1,0 +1,1 @@
+export { default as GithubUsersService } from './gh-users/gh-users.service';
