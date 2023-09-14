@@ -24,7 +24,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser-esbuild",
           "options": {
-            "outputPath": "dist/angular-16-test",
+            "outputPath": "dist/angular-16-test/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -95,6 +95,61 @@
             ],
             "tsConfig": "tsconfig.spec.json"
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/angular-16-test/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "inlineStyleLanguage": "scss"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "angular-16-test:build:development",
+              "serverTarget": "angular-16-test:server:development"
+            },
+            "production": {
+              "browserTarget": "angular-16-test:build:production",
+              "serverTarget": "angular-16-test:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "angular-16-test:build:production",
+              "serverTarget": "angular-16-test:server:production"
+            },
+            "development": {
+              "browserTarget": "angular-16-test:build:development",
+              "serverTarget": "angular-16-test:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

@@ -10,6 +10,7 @@ import { GithubUserDetails } from 'src/app/shared/model';
     <div *ngIf="userDetails" class="bg-slate-600 rounded-lg shadow-2xl p-4 flex flex-col items-center">
       <img class="rounded-full w-32 h-32 object-cover mx-auto" [src]="userDetails.avatar_url" />
       <h1>{{ userDetails.login }}</h1>
+      <p>{{ workingText }}</p>
     </div>
   `,
   styles: [
@@ -18,4 +19,5 @@ import { GithubUserDetails } from 'src/app/shared/model';
 })
 export class UserCardComponent {
   @Input({ required: true }) public userDetails!: GithubUserDetails | null;
+  @Input({ required: true }) public workingText!: string;
 }
