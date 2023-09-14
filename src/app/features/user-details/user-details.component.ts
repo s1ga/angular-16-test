@@ -9,10 +9,6 @@ import { UserCardComponent } from "./user-card/user-card.component";
   standalone: true,
   imports: [CommonModule, UserCardComponent],
   template: `
-    <p>
-      user-details works!
-    </p>
-
     <app-user-card [userDetails]="userDetails()" />
   `,
   styles: [],

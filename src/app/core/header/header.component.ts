@@ -6,9 +6,9 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [RouterLink],
   template: `
-    <div [routerLink]="['/']" class="h-12 bg-slate-900 flex items-center p-4 cursor-pointer">
-      <h1>Github user search</h1>
-    </div>
+    <header class="h-12 bg-slate-900 flex items-center p-4">
+      <h1 class="cursor-pointer" [routerLink]="['/']">Github user search</h1>
+    </header>
   `,
   styles: [
   ],
