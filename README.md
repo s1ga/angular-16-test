@@ -1,10 +1,10 @@
 # Angular16Test
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.2.
+This project is used to get into the Angular v16. The application is using different features such as signals, inject function, DestroyRef, SSR features etc. The main ability of the application is to search for GitHub users and their main details. 
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server or `npm run dev:ssr` for a dev server using SSR. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
